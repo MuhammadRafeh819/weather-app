@@ -1,52 +1,73 @@
-# 🌦️ Glassmorphism Weather App
+# Skycast Weather App
 
-A beautiful, modern, and responsive Weather Web Application built with vanilla HTML, CSS, and JavaScript. The app integrates with the **OpenWeatherMap API** to fetch real-time weather data and displays it in a premium Glassmorphism UI with smooth animations, custom icons, and interactive elements.
+A modern, responsive weather dashboard built with HTML, CSS, and JavaScript. The app fetches live weather information from the OpenWeatherMap API and presents it through a clean glassmorphism-inspired interface with an elegant, user-friendly layout.
 
+Live Demo: https://weather-app-990.netlify.app/
 
+## Overview
 
-## ✨ Features
+Skycast is a lightweight frontend weather application designed to provide quick access to current weather, air conditions, and a 7-day forecast for any searched city. It is built as a static website and can be hosted easily on Netlify, GitHub Pages, or any other static hosting service.
 
-- **Real-Time Weather Data**: Fetch current weather, temperature, humidity levels, and wind speeds for any city in the world using the OpenWeatherMap API.
-- **Glassmorphism Design**: High-fidelity modern user interface with blur backdrops, subtle card borders, custom shadows, and vibrant linear gradients.
-- **Dynamic Weather Icons**: Weather icons dynamically change to match current weather conditions (e.g., Clear, Clouds, Rain, Snow, Fog, Storm, Drizzle).
-- **Graceful Error Handling**: Displays a custom error card with an shake animation and icon when an invalid city name is entered.
-- **Smooth Animations**: Incorporates entrance fade-ins, hover states, input focus transitions, and spring-like button scaling.
-- **Fully Responsive Layout**: Built with a mobile-first responsive approach, automatically adapting to mobile phones, tablets, and desktop displays.
+## Features
 
----
+- Real-time current weather data for any city
+- 7-day forecast rendering with weekday labels
+- Humidity, wind speed, visibility, and pressure display
+- Location-based weather lookup using browser geolocation
+- Responsive layout for mobile and desktop screens
+- Graceful error handling for invalid city searches
+- Premium glassmorphism-style UI with animated cards and icons
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **HTML5**: Semantic structure.
-- **Vanilla CSS**: Custom styling, CSS Variables, Glassmorphism, CSS keyframes animations, and media queries.
-- **JavaScript (ES6+)**: Fetch API for network requests, async/await, and DOM manipulation.
-- **Weather Provider**: [OpenWeatherMap API](https://openweathermap.org/).
+- HTML5
+- CSS3
+- Vanilla JavaScript (ES6+)
+- OpenWeatherMap API
 
----
-
-## 📂 Project Structure
+## Project Structure
 
 ```text
-├── .git/                 # Git repository files
-├── .vscode/             # Editor workspace settings
-├── images/               # High-resolution weather icons and graphics
-│   ├── bg-today-large.svg
-│   ├── icon-sunny.webp
-│   ├── icon-overcast.webp
-│   ├── icon-rain.webp
-│   ├── icon-snow.webp
-│   ├── icon-fog.webp
-│   ├── icon-storm.webp
-│   ├── icon-drizzle.webp
-│   └── ... (other assets)
-├── app.js               # JavaScript application logic (API integration & DOM updates)
-├── index.html           # Main application HTML structure
-├── style.css            # Styling, layout, and visual effects
-├── image.png            # Application preview screenshot
-└── README.md            # Project documentation
+weather-done/
+├── app.js              # Weather API logic, DOM rendering, and search interactions
+├── index.html          # Main layout and UI structure
+├── style.css           # Visual styling, responsive layout, and component design
+├── images/             # Weather icons and visual assets
+├── image.png           # App preview screenshot
+└── README.md           # Project documentation
 ```
 
----
+## Getting Started
 
-Live deployed link :
-https://weather-app-213.netlify.app/
+### Prerequisites
+
+- A modern browser
+- Internet access
+- An OpenWeatherMap API key
+
+
+
+## Usage
+
+- Enter a city name in the search box
+- Click Search to fetch weather details
+- Use Use my location to get weather for your current coordinates
+- Review the current weather and upcoming weekly forecast cards
+
+## Deployment
+
+The project is deployed live on Netlify:
+
+https://weather-app-990.netlify.app/
+
+
+
+
+## Future Enhancements
+
+- Add hourly forecast view
+- Include sunrise and sunset times
+- Add dark/light theme toggle
+- Support more detailed air quality data
+- Improve UX with smoother transitions and loading states
+
