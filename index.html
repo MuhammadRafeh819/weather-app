@@ -1,52 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>api project</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skycast — Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-        <div class="search">
-            <input type="text" name="searchBar" id="searchBar" spellcheck="false" placeholder="Enter a city name">
-            <button id="button">
-                <span class="btn-text">Search</span>
-                <span class="btn-spinner"></span>
-            </button>
+  <main class="weather-app">
+    <section class="hero-panel">
+      <nav class="topbar">
+        <a class="brand" href="#" aria-label="Skycast home"><span class="brand-mark">☼</span> skycast</a>
+        <button class="location-button" id="locationButton" type="button" aria-label="Use my location">⌖ Use my location</button>
+      </nav>
+
+      <div class="search-row">
+        <label class="search-box" for="searchBar">
+          <span aria-hidden="true">⌕</span>
+          <input type="search" id="searchBar" spellcheck="false" autocomplete="off" placeholder="Search for a city">
+        </label>
+        <button id="button" type="button"><span class="btn-text">Search</span><span class="btn-spinner" aria-hidden="true"></span></button>
+      </div>
+      <p class="error-message" id="error" role="alert"></p>
+
+      <div class="current-weather" id="weather" aria-live="polite">
+        <div class="weather-copy">
+          <p class="eyebrow" id="dateText">Today, —</p>
+          <h1 class="city">Karachi</h1>
+          <p class="location-detail" id="locationDetail">Sindh, Pakistan</p>
+          <p class="condition" id="condition">Clear sky</p>
+          <div class="temperature"><span class="temp">30</span><sup>°C</sup></div>
+          <p class="feels-like">Feels like <span id="feelsLike">32°</span></p>
         </div>
+        <img src="images/icon-sunny.webp" alt="Clear weather" class="weather-icon">
+      </div>
 
-        <div class="err">
-            <p id="error">⚠️ Wrong city name</p>
+      <div class="stats-grid">
+        <article class="stat-card"><span class="stat-icon blue">◒</span><div><p>Humidity</p><strong class="humidity">66%</strong></div></article>
+        <article class="stat-card"><span class="stat-icon purple">⌁</span><div><p>Wind speed</p><strong class="wind">3.5 m/s</strong></div></article>
+        <article class="stat-card"><span class="stat-icon gold">☀</span><div><p>Visibility</p><strong class="visibility">10 km</strong></div></article>
+        <article class="stat-card"><span class="stat-icon pink">◔</span><div><p>Pressure</p><strong class="pressure">1012 hPa</strong></div></article>
+      </div>
+    </section>
+
+    <aside class="forecast-panel">
+      <div class="forecast-heading">
+        <div>
+            <p class="eyebrow">Plan ahead</p>
+            <h2 class="days">7-day forecast</h2>
         </div>
-
-        <div class="weather">
-            <img src="./images/icon-fog.webp" alt="weather icon" class="weather_icon">
-            <h1 class="temp"></h1>
-            <h2 class="city"></h2>
-
-            <div class="details">
-                <div class="col">
-                    <img src="image.png" alt="humidity">
-                    <div>
-                        <p class="humidity"></p>
-                        <p>Humidity</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <img src="./images/icon-fog.webp" alt="wind">
-                    <div>
-                        <p class="wind"></p>
-                        <p>Wind Speed</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="app.js"></script>
+        <!-- <div class="local-time"> -->
+        <!-- <span>Local time</span><strong id="localTime">--:--</strong></div></div> -->
+      <div class="forecast-list" id="forecastList"></div>
+      <!-- <div class="tip-card"><span>✦</span><p id="tipText">A light layer is all you need today. Enjoy the sunshine!</p></div> -->
+    </aside>
+  </main>
+  <script src="app.js"></script>
 </body>
 </html>
