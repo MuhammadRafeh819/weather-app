@@ -28,9 +28,9 @@ try{
     }
     else{
         document.querySelector(".city").innerHTML = result.name
-    temprature.innerHTML = Math.round(result.main.temp) + "°C"
-    humidity.innerHTML = result.main.humidity + "%"
-    windSpeed.innerHTML = result.wind.speed + "km/h" 
+    temprature.textContent = Math.round(result.main.temp) + "°C"
+    humidity.textContent = result.main.humidity + "%"
+    windSpeed.textContent = result.wind.speed + "m/s" 
 
     
     if(result.weather[0].main === "Clear"){
