@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #00c9a7 100%);
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ---------- Card ---------- */
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 0 auto;
+    padding: clamp(20px, 5vw, 35px) clamp(18px, 5vw, 30px);
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+    animation: cardEntrance 0.6s ease-out;
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---------- Search Section ---------- */
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search input {
+    flex: 1 1 60%;
+    min-width: 0;
+    border: 1px solid transparent;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 13px 16px;
+    border-radius: 12px;
+    font-size: 15px;
+    color: #1a1a1a;
+    transition: box-shadow 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.search input::placeholder {
+    color: #888;
+}
+
+.search input:focus {
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+/* ---------- Button ---------- */
+#button {
+    position: relative;
+    border: none;
+    outline: none;
+    padding: 13px 22px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    box-shadow: 0 4px 14px rgba(53, 122, 189, 0.4);
+    white-space: nowrap;
+}
+
+#button:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 20px rgba(53, 122, 189, 0.55), 0 0 0 4px rgba(74, 144, 226, 0.15);
+}
+
+#button:active {
+    transform: translateY(0) scale(0.97);
+}
+
+/* Optional loading spinner inside button (only shows if JS toggles class "loading") */
+.btn-spinner {
+    display: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    margin-left: 8px;
+    vertical-align: middle;
+    animation: spin 0.7s linear infinite;
+}
+
+#button.loading .btn-spinner {
+    display: inline-block;
+}
+
+#button.loading .btn-text {
+    opacity: 0.6;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ---------- Error State ---------- */
+.err {
+    text-align: left;
+    margin-top: 14px;
+    font-size: 14px;
+    display: none;
+    animation: shake 0.4s ease;
+}
+
+.err p {
+    background: rgba(255, 80, 80, 0.18);
+    color: #fff;
+    border: 1px solid rgba(255, 100, 100, 0.5);
+    padding: 10px 14px;
+    border-radius: 10px;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+}
+
+/* ---------- Weather Section ---------- */
+.weather {
+    display: none;
+    color: #fff;
+    animation: fadeSlideUp 0.6s ease forwards;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.weather_icon {
+    width: clamp(90px, 30vw, 130px);
+    margin: 18px auto 6px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    animation: iconPop 0.5s ease;
+}
+
+@keyframes iconPop {
+    from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-5deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Temperature */
+.weather h1.temp {
+    font-size: clamp(42px, 12vw, 64px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* City Name */
+.weather h2.city {
+    font-size: clamp(20px, 5vw, 26px);
+    font-weight: 400;
+    margin-top: 4px;
+    opacity: 0.9;
+    text-transform: capitalize;
+}
+
+/* ---------- Details Section ---------- */
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.col {
+    flex: 1 1 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 12px 10px;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.col:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.col img {
+    width: 28px;
+    flex-shrink: 0;
+}
+
+.col div {
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.col p:first-child {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.col p:last-child {
+    opacity: 0.8;
+    font-size: 12px;
+}
+
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 380px) {
+    .search {
+        flex-direction: column;
+    }
+    .search input,
+    #button {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+}
+
+@media (min-width: 600px) {
+    .card {
+        padding: 40px;
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" name="searchBar" id="searchBar" spellcheck="false" placeholder="Enter a city name">
+            <button id="button">
+                <span class="btn-text">Search</span>
+                <span class="btn-spinner"></span>
+            </button>
+        </div>
+
+        <div class="err">
+            <p id="error">⚠️ Wrong city name</p>
+        </div>
+
+        <div class="weather">
+            <img src="./images/icon-fog.webp" alt="weather icon" class="weather_icon">
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">karachi</h2>
+
+            <div class="details">
+                <div class="col">
+                    <img src="image.png" alt="humidity">
+                    <div>
+                        <p class="humidity">40%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./images/icon-fog.webp" alt="wind">
+                    <div>
+                        <p class="wind">12 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
