@@ -1,7 +1,7 @@
-const apiKey = "3fa6568efa78130e4a771cdf6d6cf598";
-const weatherUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
-const forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?units=metric";
-const reverseGeocodeUrl = "https://api.openweathermap.org/geo/1.0/reverse";
+const apiKey = "YOUR keys";
+const weatherUrl = "your api url";
+const forecastUrl = "forcast URL";
+const reverseGeocodeUrl = "geocode URL";
 
 const input = document.getElementById("searchBar");
 const searchBtn = document.getElementById("button");
